@@ -11,8 +11,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Pilotos />} />
-        <Route path="/races" element={<Races />} />
+        {/*<Route path="/" element={<Pilotos />} />*/}
+        <Route path="/" element={<Races />} />
         <Route path="/standing" element={<Standing />} />
         <Route path="/driversChampions" element={<DriversChampions />} />
       </Routes>

@@ -14,8 +14,8 @@ function Navbar() {
       <Link to="/" className="icono">
         <img src="/assets/LogoF1.png" alt="Logo F1" className="h-10" />
       </Link>
-      <Link to="/">Pilotos</Link>
-      <Link to="/races">Calendario</Link>
+      {/*<Link to="/">Pilotos</Link>*/}
+      <Link to="/">Calendario</Link>
       <Link to="/standing">Clasificación</Link>
       <Link to="/driversChampions">Campeones</Link>
       <a href="#!" className="icon" onClick={toggleMenu}>

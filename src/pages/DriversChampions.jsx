@@ -79,38 +79,6 @@ function DriversChampions() {
             <DriverCard key={index} character={champion} />
           ))}
         </div>
-
-
-/*     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Campeones de Pilotos</h1>
-      <table className="w-full bg-white rounded-lg shadow-md">
-        <thead>
-          <tr>
-            <th className="text-red-700">Año</th>
-            <th className="text-red-700">Piloto</th>
-            <th className="text-red-700">Nacionalidad</th>
-            <th className="text-red-700">Equipo</th>
-          </tr>
-        </thead>
-        <tbody>
-          {champions.map((champion, index) => (
-            <tr key={index}>
-              <td>{champion.año}</td>
-              <td>{champion.nombreCompleto}</td>
-              <td>
-                {champion.nacionalidad}{" "}
-                <img
-                  src={`https://flagcdn.com/w40/${champion.codigoPais}.png`}
-                  alt={champion.nacionalidad}
-                  className="inline-block w-6 h-4 mr-2"
-                />
-              </td>
-              <td>{champion.equipo}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div> */
   );
 }
 
