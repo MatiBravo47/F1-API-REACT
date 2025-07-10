@@ -29,6 +29,7 @@ Abrí tu navegador en:
 - Listado de pilotos
 - Información de circuitos
 - Datos de carreras
+- Campeones F1
 
 ---
 
@@ -37,7 +38,7 @@ Abrí tu navegador en:
 - Vista de detalle para pilotos y circuitos
 - Gráficos de estadísticas por temporada
 - Modo oscuro
-- Despliegue en GitHub Pages o Vercel
+- Despliegue en GitHub Pages
 
 ---
 
@@ -46,4 +47,4 @@ Abrí tu navegador en:
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [JavaScript (ES6+)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-- [Axios](https://axios-http.com/) (si lo estás usando para las peticiones)
+- [Axios](https://axios-http.com/)
