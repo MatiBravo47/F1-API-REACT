@@ -35,7 +35,7 @@ function StandingTable({ headers, apiUrl, isTeamTable }) {
         <thead>
           <tr>
             {headers.map((header, index) => (
-              <th key={index} className="text-black">
+              <th key={index} className="text-black ">
                 {header}
               </th>
             ))}

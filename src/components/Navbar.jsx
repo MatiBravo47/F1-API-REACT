@@ -15,9 +15,12 @@ function Navbar() {
         <img src="/assets/LogoF1.png" alt="Logo F1" className="h-10" />
       </Link>
       {/*<Link to="/">Pilotos</Link>*/}
-      <Link to="/">Calendario</Link>
+      {/*<Link to="/">Calendario</Link>
       <Link to="/standing">Clasificación</Link>
-      <Link to="/driversChampions">Campeones</Link>
+      <Link to="/driversChampions">Campeones</Link>*/}
+      <Link to="/" onClick={() => setIsResponsive(false)}>Calendario</Link>
+      <Link to="/standing" onClick={() => setIsResponsive(false)}>Clasificación</Link>
+      <Link to="/driversChampions" onClick={() => setIsResponsive(false)}>Campeones</Link>
       <a href="#!" className="icon" onClick={toggleMenu}>
         <i className="fa fa-bars"></i>
       </a>
