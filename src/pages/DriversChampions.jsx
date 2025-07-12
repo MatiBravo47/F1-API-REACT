@@ -24,7 +24,6 @@ function DriversChampions() {
 
           const campeon = data.drivers_championship[0]; // Obtener el primer piloto (posición 1)
           const nombreCompleto = `${campeon.driver.name} ${campeon.driver.surname}`;
-          console.log(nombreCompleto);
 
           // Contar las veces que el piloto fue campeón
           if (campeones[nombreCompleto]) {
@@ -36,8 +35,6 @@ function DriversChampions() {
           // Obtener el código de país
           const nacionalidad = campeon.driver.nationality;
           const codigoPais = obtenerCodigoPais(nacionalidad);
-
-
           const urlPhoto = obtenerFotoPiloto(nombreCompleto);
 
           filas.push({
@@ -73,8 +70,7 @@ function DriversChampions() {
   }
 
   return (
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+        <div className="bg-black" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {champions.map((champion, index ) => (
             <DriverCard key={index} character={champion} />
           ))}

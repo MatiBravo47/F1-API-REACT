@@ -30,12 +30,12 @@ function StandingTable({ headers, apiUrl, isTeamTable }) {
   }, [apiUrl, isTeamTable]);
 
   return (
-    <div className="w-full lg:w-1/2 bg-white md:p-6">
-      <table className="w-full bg-stone-100 rounded-2xl">
+    <div className="w-full bg-[#15151E] md:p-6">
+      <table className="w-full bg-stone-100 ">
         <thead>
           <tr>
             {headers.map((header, index) => (
-              <th key={index} className="text-black ">
+              <th key={index} className="text-white bg-black ">
                 {header}
               </th>
             ))}
@@ -47,18 +47,17 @@ function StandingTable({ headers, apiUrl, isTeamTable }) {
               style={{ 
                 backgroundColor:
                   !isTeamTable && item.position === 1
-                  ? "#FFFFFF" // Color dorado para la posición 1
-                  : isTeamTable
+                  ? obtenerCodigoColor(item.team.teamName)// Color dorado para la posición 1
+                  : isTeamTable && (item.position === 1)
                   ? obtenerCodigoColor(item.team.teamName)
                   : "#15151E",
-                color: !isTeamTable && item.position === 1 ? "#15151E" : "inherit", // Color de texto para la posición 1
                 height: item.position === 1 ? "60px" : "auto", // Altura más alta para la posición 1
                 }}>
               {isTeamTable ? (
                 <>
-                  <td>{item.position}</td>
-                  <td>{item.team.teamName}</td>
-                  <td>{item.points}</td>
+                  <td className="font-bold">{item.position}</td>
+                  <td className="font-bold">{item.team.teamName}</td>
+                  <td className="font-bold">{item.points}</td>
                 </>
               ) : (
                 <>
@@ -72,8 +71,8 @@ function StandingTable({ headers, apiUrl, isTeamTable }) {
                   <td>{item.driver.name}{" "}
                      <span className="surname">{item.driver.surname}</span> 
                   </td>
-                  <td>{item.team.teamName}</td>
-                  <td>{item.points}</td>
+                  <td className="font-bold">{item.team.teamName}</td>
+                  <td className="font-bold">{item.points}</td>
                 </>
               )}
             </tr>

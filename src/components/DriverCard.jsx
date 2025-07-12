@@ -1,16 +1,14 @@
 function DriverCard({ character }) {
-  console.log(character);
   return (
-      <div style={{
-        border: '1px solid #ccc',
+      <div className="bg-[#15151E]" style={{
+        border: '1px solid #000000',
         borderRadius: '8px',
         padding: '1rem',
         textAlign: 'center',
         boxShadow: '2px 2px 8px rgba(0, 0, 0, 0.1)',
-        backgroundColor: '#f9f9f9',
         transition: 'transform 0.2s',
       }}>
-        <h1>{character.año}</h1>
+        <h1 className="text-white font-bold">{character.año}</h1>
         <img
           src={character.urlPhoto}
           alt={character.nombreCompleto}
@@ -23,8 +21,8 @@ function DriverCard({ character }) {
             margin: '0 auto', // Centra la imagen horizontalmente
            }}
         />
-        <h3>{character.nombreCompleto}</h3>
-        <p>{character.nacionalidad}                 
+        <h3 className="text-white font-bold">{character.nombreCompleto}</h3>
+        <p className="text-white">{character.nacionalidad}                 
           <img
             src={`https://flagcdn.com/w40/${character.codigoPais}.png`}
             alt={character.nacionalidad}

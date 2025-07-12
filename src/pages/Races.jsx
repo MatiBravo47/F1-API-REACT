@@ -22,32 +22,32 @@ function Races() {
       <Helmet>
         <title>Schedule | F1 Explorer</title>
       </Helmet>
-      <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Calendario de Carreras 2025</h1>
-        <table className="w-full bg-white rounded-lg shadow-md">
+      <div className=" w-full p-4 bg-[#15151E] ">
+        <table className="w-full bg-[#15151E] rounded-lg shadow-md">
           <thead>
-            <tr>
-              <th className="text-red-700">Ronda</th>
-              <th className="text-red-700">Nombre de la Carrera</th>
-              <th className="text-red-700">Fecha</th>
-              <th className="text-red-700">Hora (UTC-3)</th>
+            <tr className="bg-[#000000]">
+              <th className="text-[#E10600]">Ronda</th>
+              <th className="text-[#E10600]">Nombre de la Carrera</th>
+              <th className="text-[#E10600]">Fecha</th>
+              <th className="text-[#E10600]">Hora (UTC-3)</th>
             </tr>
           </thead>
           <tbody>
             {races.map((circuito) => {
-
               // Formatear la fecha al formato DD/MM
               const fechaOriginal = circuito.schedule.race.date;
-              console.log("fechaOriginal: ", fechaOriginal);  
-            
               const [year, month, day] = fechaOriginal.split("-");
-              const fechaOriginal2 = `${day}/${month}/${year}`;
-            
+              
+              const fp1Date = circuito.schedule.fp1.date;
+              const [fp1year, fp1month, fp1day] = fp1Date.split("-");
+              
+              const fecha = new Date(fechaOriginal); // Convertir a Date
+
+              const mesAbreviado = fecha.toLocaleString("es-ES", { month: "short" });
+                          
               const now = new Date().toISOString().split('T')[0];
-              console.log("Fecha now: ",now);
-              console.log("Comparacion now > fecha original? ",now < fechaOriginal);
             
-              const fechaFormateada = `${day}/${month}`;
+              const fechaFormateada = `${fp1day}-${day} ${mesAbreviado}`;
 
               // Convertir la hora a UTC-3
               const horaOriginal = circuito.schedule.race.time; // Ejemplo: "04:00:00Z"
@@ -64,14 +64,15 @@ function Races() {
               }
               return (
                 <tr 
+                  className="text-white"
                   key={circuito.round}
                   style={{
-                    backgroundColor: isNextRace ? "#FFD700" : "inherit", // Fondo dorado para la próxima carrera
+                    backgroundColor: isNextRace ? "#E10600" : "#15151E", // Fondo dorado para la próxima carrera
                   }}>
-                  <td>{circuito.round}</td>
-                  <td>{circuito.raceName}</td>
-                  <td>{fechaFormateada}</td>
-                  <td>{horaLocal}</td>
+                  <td className="font-bold">{circuito.round}</td>
+                  <td className="font-bold">{circuito.raceName}</td>
+                  <td className="font-bold">{fechaFormateada}</td>
+                  <td className="font-bold">{horaLocal}</td>
                 </tr>
               );
             })}

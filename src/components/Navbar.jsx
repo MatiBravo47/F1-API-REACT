@@ -12,15 +12,12 @@ function Navbar() {
   return (
     <nav className={`topnav bg-red-700 ${isResponsive ? "responsive" : ""}`} id="myTopnav">
       <Link to="/" className="icono">
-        <img src="/assets/LogoF1.png" alt="Logo F1" className="h-10" />
+        <img src="/assets/LogoF1.png" alt="Logo F1"/>
       </Link>
-      {/*<Link to="/">Pilotos</Link>*/}
-      {/*<Link to="/">Calendario</Link>
-      <Link to="/standing">Clasificación</Link>
-      <Link to="/driversChampions">Campeones</Link>*/}
-      <Link to="/" onClick={() => setIsResponsive(false)}>Calendario</Link>
-      <Link to="/standing" onClick={() => setIsResponsive(false)}>Clasificación</Link>
-      <Link to="/driversChampions" onClick={() => setIsResponsive(false)}>Campeones</Link>
+      <Link to="/" className="font-bold" onClick={() => setIsResponsive(false)}>Calendario</Link>
+      <Link to="/drivers" className="font-bold" onClick={() => setIsResponsive(false)}>Pilotos</Link>
+      <Link to="/teams" className="font-bold" onClick={() => setIsResponsive(false)}>Equipos</Link>
+      <Link to="/driversChampions" className="font-bold" onClick={() => setIsResponsive(false)}>Campeones</Link>
       <a href="#!" className="icon" onClick={toggleMenu}>
         <i className="fa fa-bars"></i>
       </a>
