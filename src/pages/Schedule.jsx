@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 
-function Races() {
+function Schedule() {
   const [races, setRaces] = useState([]); // Estado para almacenar las carreras
 
   useEffect(() => {
@@ -67,7 +67,8 @@ function Races() {
                   className="text-white"
                   key={circuito.round}
                   style={{
-                    backgroundColor: isNextRace ? "#E10600" : "#15151E", // Fondo dorado para la próxima carrera
+                    backgroundColor: isNextRace ? "#E10600" : "#15151E",
+                    height: isNextRace ? "60px" : "auto", 
                   }}>
                   <td className="font-bold">{circuito.round}</td>
                   <td className="font-bold">{circuito.raceName}</td>
@@ -83,4 +84,4 @@ function Races() {
   );
 }
 
-export default Races;
+export default Schedule;

@@ -70,7 +70,7 @@ function DriversChampions() {
   }
 
   return (
-        <div className="bg-black" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+        <div className="bg-black min-h-screen" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {champions.map((champion, index ) => (
             <DriverCard key={index} character={champion} />
           ))}
