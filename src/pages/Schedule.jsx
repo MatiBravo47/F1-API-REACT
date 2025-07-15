@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
+import HorizontalCard from "../components/HorizontalCard";
 
 //import { HorizontalCard } from "../components/HorizontalCard";
 
 function Schedule() {
   const [races, setRaces] = useState([]); // Estado para almacenar las carreras
+  
+  //new
+  const [nextRace, setNextRace] = useState(null);
 
   useEffect(() => {
     // Llamada a la API para obtener las carreras
@@ -12,6 +16,11 @@ function Schedule() {
       .then((response) => response.json())
       .then((data) => {
         setRaces(data.races); // Guardar las carreras en el estado
+
+                // Buscar la próxima carrera
+        const today = new Date().toISOString().split("T")[0];
+        const upcoming = data.races.find((race) => race.schedule.race.date > today);
+        setNextRace(upcoming);
       })
       .catch((error) => console.error("Error fetching races:", error));
   }, []);
@@ -27,18 +36,15 @@ function Schedule() {
       <Helmet>
         <title>Schedule | F1 Explorer</title>
       </Helmet>
-      <div className=" w-full p-4 bg-[#15151E] ">
-        {/*<HorizontalCard race={nextRace} />*/}
+      <div className=" w-full bg-[#15151E] ">
+        <HorizontalCard race={nextRace}/>
         <table className="w-full bg-[#15151E] rounded-lg shadow-md">
           <thead>
             <tr className="bg-[#000000]">
               <th className="text-[#E10600]">#</th>
               <th className="text-[#E10600]">Gran Premio</th>
               <th className="text-[#E10600]">Fecha</th>
-              
-              <th className="text-[#E10600] whitespace-nowrap" title="Hora en zona horaria UTC-3">
-  Hora
-</th>
+              {/*<th className="text-[#E10600] whitespace-nowrap" title="Hora en zona horaria UTC-3">Hora</th>*/}
             </tr>
           </thead>
           <tbody>
@@ -82,7 +88,7 @@ function Schedule() {
                   <td className="font-bold">{circuito.round}</td>
                   <td className="font-bold">{circuito.raceName}</td>
                   <td className="font-bold">{fechaFormateada}</td>
-                  <td className="font-bold">{horaLocal}</td>
+                  {/*<td className="font-bold">{horaLocal}</td>*/}
                 </tr>
               );
             })}

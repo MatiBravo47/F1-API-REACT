@@ -1,76 +1,108 @@
-// components/HorizontalCard.jsx
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
-
-export function HorizontalCard({ race }) {
+function HorizontalCard({race}) {
   if (!race) return null;
+  console.log(race);
 
-  const fecha = new Date(race.schedule.race.date);
-  const mesAbreviado = fecha.toLocaleString("es-ES", { month: "short" });
-  const day = race.schedule.fp1.date.split("-")[2];
-  const raceDay = race.schedule.race.date.split("-")[2];
-  const fechaFormateada = `${day}-${raceDay} ${mesAbreviado}`;
+    const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = date.toLocaleString("es-ES", { month: "short" });
+    return `${day} ${month.toUpperCase()}`;
+  };
 
-  const horaLocal = new Date(`2025-01-01T${race.schedule.race.time}`).toLocaleTimeString("es-AR", {
-    timeZone: "America/Argentina/Buenos_Aires",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  const formatTime = (timeStr) => {
+    const date = new Date(`2025-01-01T${timeStr}`);
+    return date.toLocaleTimeString("es-AR", {
+      timeZone: "America/Argentina/Buenos_Aires",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
 
   return (
-    <Card className="w-full max-w-[48rem] flex-row mb-6 mx-auto">
-      <CardHeader
-        shadow={false}
-        floated={false}
-        className="m-0 w-2/5 shrink-0 rounded-r-none"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1471&q=80"
-          alt="carrera"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h6" color="gray" className="mb-4 uppercase">
-          Ronda {race.round}
-        </Typography>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
-          {race.raceName}
-        </Typography>
-        <Typography color="gray" className="mb-2">
-          {race.circuit.name}
-        </Typography>
-        <Typography color="gray" className="mb-2">
-          {race.circuit.location.locality}, {race.circuit.location.country}
-        </Typography>
-        <Typography color="gray" className="mb-4">
-          Fecha: {fechaFormateada} — Hora: {horaLocal}
-        </Typography>
-        <a href="#" className="inline-block">
-          <Button variant="text" className="flex items-center gap-2 text-[#E10600]">
-            Ver detalles
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              className="h-4 w-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </Button>
-        </a>
-      </CardBody>
-    </Card>
+    
+    <div className="justify-center w-screen">
+      <div className="relative flex flex-row md:flex-row space-x-5 rounded-xl shadow-lg p-5 max-h-[600px] overflow-hidden w-full">
+
+        <div className="w-full md:w-2/3 bg-[#15151E] flex flex-col justify-start p-6">
+          <div className="bg-[#15151E] justify-between items-center">
+            <span className="text-white bg-[#B91C1C] text-sm font-medium">Próxima carrera</span>
+            <p className="text-gray-500 text-base font-black">Round {race.round}</p>
+          </div>
+
+          <h3 className="bg-[#15151E] font-black text-lg text-white text-3xl">{race.circuit.country}</h3>
+          <p className="bg-[#15151E] text-lg text-white">{race.raceName} </p>
+
+          <div className="bg-gray-900 rounded-lg p-3 mt-auto text-white text-sm space-y-1">
+
+            <div className="bg-[#15151E] flex justify-between border-b border-gray-700 pb-1">
+              <span className="text-gray-400">P1</span>
+              <span>
+              {formatTime(race.schedule.fp1.time)} - {formatDate(race.schedule.fp1.date)}
+              </span>
+            </div>
+
+            {race.schedule.fp2.date ? (
+            <div className="bg-[#15151E] flex justify-between border-b border-gray-700 pb-1">
+              <span className="text-gray-400">P2</span>
+              <span>
+              {formatTime(race.schedule.fp2.time)} - {formatDate(race.schedule.fp2.date)}
+              </span>
+            </div>
+            ) : null}
+
+            {race.schedule.fp3.date ? (
+              <div className="bg-[#15151E] flex justify-between border-b border-gray-700 pb-1">
+                <span className="text-gray-400">P3</span>
+                <span>
+                  {formatTime(race.schedule.fp3.time)} - {formatDate(race.schedule.fp3.date)}
+                </span>
+              </div>
+            ) : null}
+
+            {race.schedule.sprintQualy.date ? (
+              <div className="bg-[#15151E] flex justify-between border-b border-gray-700 pb-1">
+                <span className="text-gray-400">Sprint Q</span>
+                <span>
+                  {formatTime(race.schedule.sprintQualy.time)} - {formatDate(race.schedule.sprintQualy.date)}
+                </span>
+              </div>
+            ) : null}
+
+            {race.schedule.sprintQualy.date ? (
+              <div className="bg-[#15151E] flex justify-between border-b border-gray-700 pb-1">
+                <span className="text-gray-400">Sprint</span>
+                <span>
+                  {formatTime(race.schedule.sprintRace.time)} - {formatDate(race.schedule.sprintRace.date)}
+                </span>
+              </div>
+            ) : null}
+
+            <div className="bg-[#15151E] flex justify-between border-b border-gray-700 pb-1">
+              <span className="text-gray-400">Q</span>
+              <span>
+              {formatTime(race.schedule.qualy.time)} - {formatDate(race.schedule.qualy.date)}
+              </span>
+            </div>
+
+            <div className="bg-[#15151E] flex justify-between">
+              <span className="text-red-400 font-semibold">Carrera</span>
+              {<span className="font-semibold"> {formatTime(race.schedule.race.time)} - {formatDate(race.schedule.race.date)}</span>}
+            </div>
+
+          </div>
+        </div>
+
+        <div className="w-1/2 md:w-1/3 bg-[#15151E] grid place-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/69/2022_F1_CourseLayout_Belgium.svg"
+            alt="mapa del circuito"
+            className="rounded-xl object-contain h-full max-w-[140px] max-h-[300px]"
+          />
+        </div>
+
+      </div>
+    </div>
   );
 }
+
+export default HorizontalCard;

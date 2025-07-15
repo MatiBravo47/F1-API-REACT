@@ -1,5 +1,4 @@
 import React from "react";
-//import StandingTable from "../components/StandingTable";
 import { Helmet } from 'react-helmet';
 import DriversStandingTable from  "../components/tables/DriversStandingTable";
 
