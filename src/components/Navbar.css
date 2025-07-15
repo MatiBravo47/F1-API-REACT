@@ -29,7 +29,7 @@ body {
   }
   
   .topnav a:hover {
-    background-color: #15151E;
+    /*background-color: #15151E;*/
     color: white;
   }
   
@@ -85,4 +85,19 @@ body {
     display: block;
     text-align: left;
   }
+
+  .topnav.responsive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* 100% de la altura de la pantalla */
+  width: 100vw;
+  background-color: #B91C1C;
+  z-index: 9999; /* por encima de todo */
+  overflow-y: auto;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
 }

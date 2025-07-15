@@ -1,0 +1,52 @@
+import React, { useState, useEffect } from "react";
+import "./../StandingTable.css";
+import { obtenerCodigoPais, obtenerCodigoColor } from "./../../utils/utils";
+
+function DriversStandingTable({ apiUrl }) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(apiUrl)
+      .then(res => res.json())
+      .then(data => setData(data.drivers_championship))
+      .catch(err => console.error(err));
+  }, [apiUrl]);
+
+  return (
+    <div className="w-full bg-[#15151E] md:p-6">
+      <table className="w-full bg-stone-100">
+        <thead>
+          <tr className="bg-black text-white">
+            <th>#</th>
+            <th>Bandera</th>
+            <th>Piloto</th>
+            <th>Equipo</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, index) => (
+            <tr key={index} style={{
+              backgroundColor: item.position === 1 ? obtenerCodigoColor(item.team.teamName) : "#15151E",
+              height: item.position === 1 ? "60px" : "auto"
+            }}>
+              <td>{item.position}</td>
+              <td>
+                <img
+                  src={`https://flagcdn.com/w40/${obtenerCodigoPais(item.driver.nationality)}.png`}
+                  alt={item.driver.nationality}
+                  className="inline-block w-6 h-4 mr-2"
+                />
+              </td>
+              <td>{item.driver.name} <span className="surname">{item.driver.surname}</span></td>
+              <td className="font-bold">{item.team.teamName}</td>
+              <td className="font-bold">{item.points}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default DriversStandingTable;

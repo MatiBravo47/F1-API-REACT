@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 
+//import { HorizontalCard } from "../components/HorizontalCard";
+
 function Schedule() {
   const [races, setRaces] = useState([]); // Estado para almacenar las carreras
 
@@ -14,6 +16,9 @@ function Schedule() {
       .catch((error) => console.error("Error fetching races:", error));
   }, []);
 
+    //const today = new Date().toISOString().split("T")[0];
+  //const nextRace = races.find((race) => race.schedule.race.date > today);
+
   let nextRaceFound = false; // Bandera para identificar el primer `true`
 
 
@@ -23,13 +28,17 @@ function Schedule() {
         <title>Schedule | F1 Explorer</title>
       </Helmet>
       <div className=" w-full p-4 bg-[#15151E] ">
+        {/*<HorizontalCard race={nextRace} />*/}
         <table className="w-full bg-[#15151E] rounded-lg shadow-md">
           <thead>
             <tr className="bg-[#000000]">
-              <th className="text-[#E10600]">Ronda</th>
-              <th className="text-[#E10600]">Nombre de la Carrera</th>
+              <th className="text-[#E10600]">#</th>
+              <th className="text-[#E10600]">Gran Premio</th>
               <th className="text-[#E10600]">Fecha</th>
-              <th className="text-[#E10600]">Hora (UTC-3)</th>
+              
+              <th className="text-[#E10600] whitespace-nowrap" title="Hora en zona horaria UTC-3">
+  Hora
+</th>
             </tr>
           </thead>
           <tbody>

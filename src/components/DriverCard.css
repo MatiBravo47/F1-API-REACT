@@ -1,0 +1,18 @@
+.driver-card {
+  background-color: #15151E;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.driver-photo {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}

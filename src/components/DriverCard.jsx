@@ -1,25 +1,13 @@
+import "./DriverCard.css";
+
 function DriverCard({ character }) {
   return (
-      <div className="bg-[#15151E]" style={{
-        border: '1px solid #000000',
-        borderRadius: '8px',
-        padding: '1rem',
-        textAlign: 'center',
-        boxShadow: '2px 2px 8px rgba(0, 0, 0, 0.1)',
-        transition: 'transform 0.2s',
-      }}>
+      <div className=" driver-card" >
         <h1 className="text-white font-bold">{character.año}</h1>
         <img
           src={character.urlPhoto}
           alt={character.nombreCompleto}
-          style={{ 
-            borderRadius: '50%', 
-            width: '120px', 
-            height: '120px', 
-            objectFit: 'cover',
-            display: 'block', // Hace que la imagen sea un bloque
-            margin: '0 auto', // Centra la imagen horizontalmente
-           }}
+          className="driver-photo"
         />
         <h3 className="text-white font-bold">{character.nombreCompleto}</h3>
         <p className="text-white">{character.nacionalidad}                 

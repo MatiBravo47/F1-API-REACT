@@ -10,7 +10,7 @@ function Navbar() {
   };
 
   return (
-    <nav className={`topnav bg-red-700 ${isResponsive ? "responsive" : ""}`} id="myTopnav">
+    <nav className={`topnav bg-red-700 transition-all duration-300 ease-in-out ${isResponsive ? "responsive" : ""}`} id="myTopnav">
       <Link to="/" className="icono">
         <img src="/assets/LogoF1.png" alt="Logo F1"/>
       </Link>
