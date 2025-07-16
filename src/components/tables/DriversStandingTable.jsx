@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
-import { obtenerCodigoPais, obtenerCodigoColor } from "./../../utils/utils";
+import { obtenerCodigoPais, obtenerCodigoColor, getTeamShortName } from "./../../utils/utils";
 
 function DriversStandingTable({ apiUrl }) {
   const [data, setData] = useState([]);
@@ -18,7 +18,7 @@ function DriversStandingTable({ apiUrl }) {
         <thead>
           <tr className="bg-black text-white">
             <th>#</th>
-            <th>Bandera</th>
+            <th></th>
             <th>Piloto</th>
             <th>Equipo</th>
             <th>Puntos</th>
@@ -39,7 +39,7 @@ function DriversStandingTable({ apiUrl }) {
                 />
               </td>
               <td>{item.driver.name} <span className="surname">{item.driver.surname}</span></td>
-              <td className="font-bold">{item.team.teamName}</td>
+              <td className="font-bold">{getTeamShortName(item.team.teamName)}</td>
               <td className="font-bold">{item.points}</td>
             </tr>
           ))}

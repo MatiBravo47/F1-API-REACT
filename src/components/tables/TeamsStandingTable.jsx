@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
-import { obtenerCodigoColor } from "../../utils/utils.js";
+import { obtenerCodigoColor, getTeamShortName } from "../../utils/utils.js";
 
 function TeamsStandingTable({ apiUrl }) {
   const [data, setData] = useState([]);
@@ -29,7 +29,7 @@ function TeamsStandingTable({ apiUrl }) {
               height: item.position === 1 ? "60px" : "auto"
             }}>
               <td className="font-bold">{item.position}</td>
-              <td className="font-bold">{item.team.teamName}</td>
+              <td className="font-bold">{getTeamShortName(item.team.teamName)}</td>
               <td className="font-bold">{item.points}</td>
             </tr>
           ))}

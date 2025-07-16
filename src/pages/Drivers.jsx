@@ -12,7 +12,6 @@ function Drivers() {
         <DriversStandingTable
           apiUrl="https://f1api.dev/api/current/drivers-championship"
         />
-
       </div>
     </>
   );
