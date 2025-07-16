@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
-import { obtenerCodigoColor, getTeamShortName } from "../../utils/utils.js";
+import { getTeamColor, getTeamShortName } from "../../utils/utils.js";
 
 function TeamsStandingTable({ apiUrl }) {
   const [data, setData] = useState([]);
@@ -25,7 +25,7 @@ function TeamsStandingTable({ apiUrl }) {
         <tbody>
           {data.map((item, index) => (
             <tr key={index} style={{
-              backgroundColor: item.position === 1 ? obtenerCodigoColor(item.team.teamName) : "#15151E",
+              backgroundColor: item.position === 1 ? getTeamColor(item.team.teamName) : "#15151E",
               height: item.position === 1 ? "60px" : "auto"
             }}>
               <td className="font-bold">{item.position}</td>

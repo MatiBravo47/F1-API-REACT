@@ -1,4 +1,4 @@
-const mapaNacionalidades = {
+const nationalityMap = {
   British: "gb",
   "Great Britain": "gb",
   Canadian: "ca",
@@ -20,17 +20,15 @@ const mapaNacionalidades = {
   Monaco: "mc",
   Thailand: "th",
   Japan: "jp",
-  NewZealander: "nz", // Código de país para Nueva Zelanda
-  "New Zealander": "nz", // Otra opción para Nueva Zelanda
+  NewZealander: "nz",
+  "New Zealander": "nz", 
   Brazil: "br",
-  // Agrega más nacionalidades según sea necesario
 };
-export const obtenerCodigoPais = (nacionalidad) => {
-  return mapaNacionalidades[nacionalidad] || "un"; // "un" para bandera genérica si no se encuentra
+export const getCountryCode = (nationality) => {
+  return nationalityMap[nationality] || "un"; // "un" para bandera genérica si no se encuentra
 };
 
-// 🎨 Equipos a colores
-const mapacolores = {
+const teamColors = {
   "McLaren Formula 1 Team": "#F77F00",
   "Mercedes Formula 1 Team": "#27F4D2",
   "Red Bull Racing": "#3671C6",
@@ -42,8 +40,8 @@ const mapacolores = {
   "Sauber F1 Team": "#52E252",
   "RB F1 Team": "#6692FF",
 };
-export const obtenerCodigoColor = (teamName) => {
-  return mapacolores[teamName] || "#FFFFFF";
+export const getTeamColor = (teamName) => {
+  return teamColors[teamName] || "#FFFFFF";
 };
 
 const mapNames = {

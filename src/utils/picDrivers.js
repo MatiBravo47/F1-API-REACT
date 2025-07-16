@@ -1,5 +1,5 @@
-export const obtenerFotoPiloto = (nombrePiloto) => {
-    const mapaPilotos = {
+export const getDriverPhoto = (driverName) => {
+    const driverPhotoMap = {
         "Nino Farina": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/NinoFarina.jpg/640px-NinoFarina.jpg",
         "Juan Fangio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Juan_Manuel_Fangio_%28circa_1952%29.jpg/640px-Juan_Manuel_Fangio_%28circa_1952%29.jpg",
         "Alberto Ascari": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Grote_Prijs_Nederlandse_autoraces_Zandvoort._Winnaar_Askari_en_Z._K._M._de_Prins%2C_Bestanddeelnr_905-2688_%28cropped%29.jpg/640px-Grote_Prijs_Nederlandse_autoraces_Zandvoort._Winnaar_Askari_en_Z._K._M._de_Prins%2C_Bestanddeelnr_905-2688_%28cropped%29.jpg",
@@ -35,5 +35,5 @@ export const obtenerFotoPiloto = (nombrePiloto) => {
         "Max Verstappen" : "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Max_Verstappen_at_the_2021_French_Grand_Prix.png/640px-Max_Verstappen_at_the_2021_French_Grand_Prix.png", 
         "Nico Rosberg" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nico_Rosberg_at_the_2015_F1_Russian_Grand_Prix.jpg/640px-Nico_Rosberg_at_the_2015_F1_Russian_Grand_Prix.jpg",
     };
-return mapaPilotos[nombrePiloto] || "https://i.pinimg.com/736x/c8/8f/5e/c88f5e0374caecd91eef9274b5937b33.jpg"; // URL genérica si no se encuentra
+return driverPhotoMap[driverName] || "https://i.pinimg.com/736x/c8/8f/5e/c88f5e0374caecd91eef9274b5937b33.jpg"; // URL genérica si no se encuentra
 };

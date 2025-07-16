@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { obtenerCodigoPais } from "../utils/utils";
+import { getCountryCode } from "../utils/utils";
 import DriverCard from '../components/DriverCard'
-import { obtenerFotoPiloto } from "../utils/picDrivers";
+import { getDriverPhoto } from "../utils/picDrivers";
 
 function DriversChampions() {
   const [champions, setChampions] = useState([]); // Estado para almacenar los datos de los campeones
@@ -11,7 +11,7 @@ function DriversChampions() {
 
   useEffect(() => {
     const fetchChampions = async () => {
-      const campeones = {}; // Objeto para contar las veces que un piloto fue campeón
+      //const campeones = {}; // Objeto para contar las veces que un piloto fue campeón
       const filas = []; // Array para almacenar las filas temporalmente
 
       try {
@@ -22,28 +22,26 @@ function DriversChampions() {
           }
           const data = await response.json();
 
-          const campeon = data.drivers_championship[0]; // Obtener el primer piloto (posición 1)
-          const nombreCompleto = `${campeon.driver.name} ${campeon.driver.surname}`;
+          const champion = data.drivers_championship[0]; // Obtener el primer piloto (posición 1)
+          const fullName = `${champion.driver.name} ${champion.driver.surname}`;
 
           // Contar las veces que el piloto fue campeón
-          if (campeones[nombreCompleto]) {
-            campeones[nombreCompleto]++;
-          } else {
-            campeones[nombreCompleto] = 1;
-          }
+          //if (campeones[nombreCompleto]) {
+          //  campeones[nombreCompleto]++;
+          //} else {
+          //  campeones[nombreCompleto] = 1;
+          //}
 
-          // Obtener el código de país
-          const nacionalidad = campeon.driver.nationality;
-          const codigoPais = obtenerCodigoPais(nacionalidad);
-          const urlPhoto = obtenerFotoPiloto(nombreCompleto);
+          const nationality = champion.driver.nationality;
+          const countryCode = getCountryCode(nationality);
+          const urlPhoto = getDriverPhoto(fullName);
 
           filas.push({
             año,
-            nombreCompleto,
+            fullName,
             urlPhoto,
-            nacionalidad,
-            codigoPais,
-            equipo: campeon.team.teamName,
+            nationality,
+            countryCode,
           });
         }
 
@@ -72,7 +70,7 @@ function DriversChampions() {
   return (
         <div className="bg-black min-h-screen" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {champions.map((champion, index ) => (
-            <DriverCard key={index} character={champion} />
+            <DriverCard key={index} driver={champion} />
           ))}
         </div>
   );

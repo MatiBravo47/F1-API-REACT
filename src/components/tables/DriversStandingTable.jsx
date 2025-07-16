@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
-import { obtenerCodigoPais, obtenerCodigoColor, getTeamShortName } from "./../../utils/utils";
+import { getCountryCode, getTeamColor, getTeamShortName } from "./../../utils/utils";
 
 function DriversStandingTable({ apiUrl }) {
   const [data, setData] = useState([]);
@@ -27,13 +27,13 @@ function DriversStandingTable({ apiUrl }) {
         <tbody>
           {data.map((item, index) => (
             <tr key={index} style={{
-              backgroundColor: item.position === 1 ? obtenerCodigoColor(item.team.teamName) : "#15151E",
+              backgroundColor: item.position === 1 ? getTeamColor(item.team.teamName) : "#15151E",
               height: item.position === 1 ? "60px" : "auto"
             }}>
               <td>{item.position}</td>
               <td>
                 <img
-                  src={`https://flagcdn.com/w40/${obtenerCodigoPais(item.driver.nationality)}.png`}
+                  src={`https://flagcdn.com/w40/${getCountryCode(item.driver.nationality)}.png`}
                   alt={item.driver.nationality}
                   className="inline-block w-6 h-4 mr-2"
                 />
