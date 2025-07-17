@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getCountryCode } from "../utils/utils";
 import DriverCard from "../components/DriverCard";
 import { getDriverPhoto } from "../utils/picDrivers";
+import DriverCardSkeleton from "../components/DriverCardSkeleton";
 
 function DriversChampions() {
   const [champions, setChampions] = useState([]); // Estado para almacenar los datos de los campeones
@@ -19,12 +20,16 @@ function DriversChampions() {
             `https://f1api.dev/api/${año}/drivers-championship?limit=1&offset=0`
           );
 
-        if (response.status === 429) {
-          throw new Error(`Has superado el límite de peticiones (429) al llegar al año ${año}. Esperá un momento e intentá de nuevo.`);
-        }
+          if (response.status === 429) {
+            throw new Error(
+              `Has superado el límite de peticiones (429) al llegar al año ${año}. Esperá un momento e intentá de nuevo.`
+            );
+          }
 
           if (!response.ok) {
-            throw new Error(`Error ${response.status} al obtener datos para el año ${año}`);
+            throw new Error(
+              `Error ${response.status} al obtener datos para el año ${año}`
+            );
           }
           const data = await response.json();
 
@@ -64,29 +69,24 @@ function DriversChampions() {
 
     fetchChampions();
   }, []);
-
-  if (loading) {
-    return <div>Cargando datos...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  return (
-    <div
-      className="bg-black min-h-screen"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        gap: "1rem",
-      }}
-    >
-      {champions.map((champion, index) => (
-        <DriverCard key={index} driver={champion} />
-      ))}
-    </div>
-  );
+return (
+  <div
+    className="bg-black min-h-screen text-white p-4"
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: "1rem",
+    }}
+  >
+    {loading
+      ? Array.from({ length: 32 }).map((_, i) => (
+          <DriverCardSkeleton key={i} />
+        ))
+      : champions.map((champion, index) => (
+          <DriverCard key={index} driver={champion} />
+        ))}
+  </div>
+);
 }
 
 export default DriversChampions;

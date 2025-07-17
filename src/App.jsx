@@ -5,6 +5,7 @@ import Schedule from "./pages/Schedule";
 import Drivers from "./pages/Drivers";
 import Teams from "./pages/Teams";
 import DriversChampions from "./pages/driversChampions";
+import DriverDetails from "./components/DriverDetails";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Schedule />} />
         <Route path="/drivers" element={<Drivers />} />
+        <Route path="/drivers/:driverId" element={<DriverDetails />} />
         <Route path="/teams" element={<Teams/>} />
         <Route path="/driversChampions" element={<DriversChampions />} />
       </Routes>

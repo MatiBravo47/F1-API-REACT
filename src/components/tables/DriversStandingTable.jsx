@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
 import { getCountryCode, getTeamColor, getTeamShortName } from "./../../utils/utils";
+import { useNavigate } from "react-router-dom";
 
 function DriversStandingTable({ apiUrl }) {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(apiUrl)
@@ -26,9 +28,12 @@ function DriversStandingTable({ apiUrl }) {
         </thead>
         <tbody>
           {data.map((item, index) => (
-            <tr key={index} style={{
-              backgroundColor: item.position === 1 ? getTeamColor(item.team.teamName) : "#15151E",
-              height: item.position === 1 ? "60px" : "auto"
+            <tr 
+              key={index} 
+              onClick={() => navigate(`/drivers/${item.driverId}`)}
+              style={{
+                backgroundColor: item.position === 1 ? getTeamColor(item.team.teamName) : "#15151E",
+                height: item.position === 1 ? "60px" : "auto"
             }}>
               <td>{item.position}</td>
               <td>
