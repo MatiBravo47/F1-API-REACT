@@ -11,6 +11,7 @@ function DriversChampions() {
 
   useEffect(() => {
     const fetchChampions = async () => {
+      const startTime = performance.now(); // ⏱️ Inicio
       //const campeones = {}; // Objeto para contar las veces que un piloto fue campeón
       const filas = []; // Array para almacenar las filas temporalmente
 
@@ -57,10 +58,12 @@ function DriversChampions() {
         }
 
         // Ordenar las filas por año
-        filas.sort((a, b) => a.año - b.año);
+        //filas.sort((a, b) => a.año - b.año);
 
         setChampions(filas); // Guardar los datos en el estado
         setLoading(false); // Cambiar el estado de carga
+        const endTime = performance.now(); // ⏱️ Fin
+        console.log(`⏱️ Tiempo total de carga: ${(endTime - startTime).toFixed(2)} ms`);
       } catch (err) {
         setError(err.message);
         setLoading(false);
