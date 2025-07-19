@@ -13,7 +13,6 @@ function DriversStandingTable({ apiUrl }) {
       .then(data => setData(data.drivers_championship))
       .catch(err => console.error(err));
   }, [apiUrl]);
-
   return (
     <div className="w-full bg-[#15151E] md:p-6">
       <table className="w-full bg-stone-100">
@@ -43,7 +42,7 @@ function DriversStandingTable({ apiUrl }) {
                   className="inline-block w-6 h-4 mr-2"
                 />
               </td>
-              <td>{item.driver.name} <span className="font-bold uppercase ">{item.driver.surname}</span></td>
+              <td>{item.driver.name} <span className="font-bold ">{item.driver.surname}</span></td>
               <td className="font-bold">{getTeamShortName(item.team.teamName)}</td>
               <td className="font-bold">{item.points}</td>
             </tr>

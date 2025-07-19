@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
 import { getTeamColor, getTeamShortName } from "../../utils/utils.js";
+import { useNavigate } from "react-router-dom";
 
 function TeamsStandingTable({ apiUrl }) {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(apiUrl)
@@ -26,12 +28,14 @@ function TeamsStandingTable({ apiUrl }) {
           {data.map((item, index) => (
             <tr
               key={index}
+              onClick={() => navigate(`/teams/${item.teamId}`)}
               style={{
                 backgroundColor:
                   item.position === 1
                     ? getTeamColor(item.team.teamName)
                     : "#15151E",
                 height: item.position === 1 ? "60px" : "auto",
+                cursor: "pointer"
               }}
             >
               <td className="font-bold">{item.position}</td>

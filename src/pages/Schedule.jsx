@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import PageWrapper from "../components/layout/PageWrapper";
+import { Helmet } from "react-helmet-async";
 import HorizontalCard from "../components/HorizontalCard";
 import { formatRaceDate } from "../utils/formatDateRange";
-
 function Schedule() {
   const [races, setRaces] = useState([]); // Estado para almacenar las carreras
   const [nextRace, setNextRace] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://f1api.dev/api/2025")
@@ -19,8 +20,10 @@ function Schedule() {
           (race) => race.schedule.race.date > today
         );
         setNextRace(upcoming);
+        setIsLoading(false);
       })
       .catch((error) => console.error("Error fetching races:", error));
+      setIsLoading(false);
   }, []);
 
   let nextRaceFound = false; // Bandera para identificar el primer `true`
@@ -30,7 +33,7 @@ function Schedule() {
       <Helmet>
         <title>Schedule | F1 Explorer</title>
       </Helmet>
-      <div className=" w-full bg-[#15151E] ">
+      <PageWrapper isLoading={isLoading}>
         <HorizontalCard race={nextRace} />
         <table className="w-full bg-[#15151E] rounded-lg shadow-md">
           <thead>
@@ -69,7 +72,7 @@ function Schedule() {
             })}
           </tbody>
         </table>
-      </div>
+        </PageWrapper>
     </>
   );
 }
