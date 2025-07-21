@@ -16,7 +16,7 @@ function DriversStandingTable({ apiUrl }) {
   
   return (
     <div className="w-full bg-[#15151E] md:p-6">
-      <table className="w-full bg-stone-100">
+      <table className="w-full">
         <thead>
           <tr className="border-b-4 border-gray-600 bg-[#15151E] text-gray-300">
             <th>#</th>
