@@ -16,6 +16,7 @@ function DriverDetails() {
   }, [driverId]);
   console.log("data", driver);
   if (!driver) return <p>Cargando detalles del piloto...</p>;
+  
   return (
     <div>
       {/*<button onClick={() => navigate(-1)}>Volver</button>/*}

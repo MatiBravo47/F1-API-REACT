@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PageWrapper from "../components/layout/PageWrapper";
-import { Helmet } from "react-helmet-async";
 import HorizontalCard from "../components/HorizontalCard";
 import { formatRaceDate } from "../utils/formatDateRange";
 function Schedule() {
@@ -30,9 +29,6 @@ function Schedule() {
 
   return (
     <>
-      <Helmet>
-        <title>Schedule | F1 Explorer</title>
-      </Helmet>
       <PageWrapper isLoading={isLoading}>
         <HorizontalCard race={nextRace} />
         <table className="w-full bg-[#15151E] rounded-lg shadow-md">
