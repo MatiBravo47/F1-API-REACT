@@ -20,7 +20,7 @@ function HorizontalCard({ race }) {
 
   return (
     <div className="w-full">
-      <div className="relative flex flex-col md:flex-row md:space-x-5 rounded-xl shadow-lg p-4 max-h-[600px] overflow-hidden w-full space-y-5 md:space-y-0">
+      <div className="relative flex flex-col md:flex-row md:space-x-5 rounded-xl shadow-lg p-4 max-h-[800px] overflow-hidden w-full space-y-5 md:space-y-0">
         <div className="w-full md:w-2/3 bg-[#15151E] flex flex-col justify-start">
           <div className="w-fit inline-block bg-gray-800 px-3 py-1 rounded-full text-xs text-gray-400 font-medium tracking-wide uppercase">
             Próxima carrera
