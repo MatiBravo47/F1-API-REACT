@@ -18,7 +18,7 @@ function TeamsStandingTable({ apiUrl }) {
     <div className="w-full bg-[#15151E] md:p-6">
       <table className="w-full">
         <thead>
-          <tr className="bg-[#15151E] text-gray-500 border-b-4 border-gray-800">
+          <tr className="bg-[#15151E] text-gray-500 border-b-4 border-gray-600">
             <th>#</th>
             <th>Equipo</th>
             <th>Puntos</th>
@@ -29,7 +29,7 @@ function TeamsStandingTable({ apiUrl }) {
             <tr
               key={index}
               onClick={() => navigate(`/teams/${item.teamId}`)}
-              className="pl-6 bg-[#15151E] border border-gray-800 text-gray-300"
+              className="bg-[#15151E] h-[60px] border border-gray-800 text-gray-300 transition-colors duration-200 hover:bg-gray-800 hover:text-white hover:scale-[1.01]"
               style={{
                 cursor: "pointer", 
               }}

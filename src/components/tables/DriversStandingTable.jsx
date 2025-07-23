@@ -29,11 +29,10 @@ function DriversStandingTable({ apiUrl }) {
         <tbody>
           {data.map((item, index) => (
             <tr 
-              className="border border-gray-800 cursor-pointer hover:bg-gray-800 transition-colors duration-200"
+              className="bg-[#15151E] border border-gray-800 cursor-pointer transition-colors duration-200 hover:bg-gray-800 hover:text-white hover:scale-[1.01]"
               key={index} 
               onClick={() => navigate(`/drivers/${item.driverId}`)}
               style={{
-                backgroundColor: "#15151E",
                 height: item.position === 1 ? "60px" : "auto"
             }}>
               <td className="px-4 py-5">{item.position}</td>
