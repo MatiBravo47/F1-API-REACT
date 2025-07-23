@@ -19,7 +19,7 @@ function Navbar() {
         {/* Logo */}
         <NavLink to="/" onClick={closeMenu} className="mr-6">
           <img
-            src="/assets/LogoF1.png"
+            src="src\assets\LogoF1.png"
             alt="Logo F1"
             className="h-6 w-auto object-contain"
           />
