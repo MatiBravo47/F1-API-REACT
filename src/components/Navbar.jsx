@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import logo from '../assets/LogoF1.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ function Navbar() {
         {/* Logo */}
         <NavLink to="/" onClick={closeMenu} className="mr-6">
           <img
-            src="src\assets\LogoF1.png"
+            src={logo}
             alt="Logo F1"
             className="h-6 w-auto object-contain"
           />
