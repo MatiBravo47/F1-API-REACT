@@ -33,15 +33,6 @@ Abrí tu navegador en:
 
 ---
 
-## 💡 Posibles mejoras
-
-- Vista de detalle para pilotos y circuitos
-- Gráficos de estadísticas por temporada
-- Modo oscuro
-- Despliegue en GitHub Pages
-
----
-
 ## 🛠 Tecnologías utilizadas
 
 - [React](https://reactjs.org/)
