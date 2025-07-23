@@ -9,10 +9,16 @@ function Navbar() {
 
   // Función que devuelve clases según si el link está activo
   const linkClass = ({ isActive }) =>
-    `transition-colors duration-200 ${
-      isActive ? "text-white underline underline-offset-4" : "text-gray-300"
+    `transition-colors duration-300 ease-in-out ${
+      isActive ? "text-white underline underline-offset-4 " : "text-gray-300"
     } hover:text-white`;
 
+      // Función específica para los enlaces del menú mobile con borde
+  const mobileLinkClass = ({ isActive }) =>
+    `transition-colors duration-200 border-b-1 h-[60px] flex items-center w-full block ${
+      isActive ? "text-white border-white" : "text-gray-300 border-gray-500"
+    } hover:text-white hover:border-white`;
+    
   return (
     <nav className="bg-red-700 text-gray-300 px-4 py-3 relative">
       {/* Contenedor para logo + links */}
@@ -52,17 +58,17 @@ function Navbar() {
 
       {/* Menú hamburguesa desplegable */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-red-700 text-white flex flex-col items-start px-4 py-4 z-[9999] space-y-4 font-bold sm:hidden">
-          <NavLink to="/" onClick={closeMenu} className={linkClass}>
+        <div className="absolute top-full left-0 w-full bg-red-700 text-white flex flex-col items-start px-4 z-[9999] font-bold sm:hidden">
+          <NavLink to="/" onClick={closeMenu} className={mobileLinkClass}>
             Calendario
           </NavLink>
-          <NavLink to="/drivers" onClick={closeMenu} className={linkClass}>
+          <NavLink to="/drivers" onClick={closeMenu} className={mobileLinkClass}>
             Pilotos
           </NavLink>
-          <NavLink to="/teams" onClick={closeMenu} className={linkClass}>
+          <NavLink to="/teams" onClick={closeMenu} className={mobileLinkClass}>
             Equipos
           </NavLink>
-          <NavLink to="/driversChampions" onClick={closeMenu} className={linkClass}>
+          <NavLink to="/driversChampions" onClick={closeMenu} className={mobileLinkClass}>
             Campeones
           </NavLink>
         </div>
