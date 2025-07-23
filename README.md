@@ -20,7 +20,7 @@ Abrí tu navegador en:
 
 ## 📡 API utilizada
 
-- [Ergast Developer API](https://ergast.com/mrd/) – API gratuita con información de Fórmula 1 (pilotos, circuitos, resultados, temporadas, etc.)
+- [F1 Connect API](https://f1-connect-api.vercel.app/) – API gratuita con información de Fórmula 1 (pilotos, circuitos, resultados, temporadas, etc.)
 
 ---
 
