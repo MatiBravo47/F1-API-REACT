@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import PageWrapper from "../components/layout/PageWrapper";
 import HorizontalCard from "../components/HorizontalCard";
 import { formatRaceDate } from "../utils/formatDateRange";
+import LapRecord from "../components/LapRecord";
+import CircuitChampions from "../components/CircuitChampions";
+
+
 function Schedule() {
   const [races, setRaces] = useState([]); // Estado para almacenar las carreras
   const [nextRace, setNextRace] = useState(null);
@@ -26,11 +30,13 @@ function Schedule() {
   }, []);
 
   let nextRaceFound = false; // Bandera para identificar el primer `true`
-
+  console.log("Proxima carrera",nextRace)
   return (
     <>
       <PageWrapper isLoading={isLoading}>
         <HorizontalCard race={nextRace} />
+        {/*<LapRecord race={nextRace} />*/}
+        <CircuitChampions circuitId={nextRace}/>
         <table className="w-full bg-[#15151E] rounded-lg shadow-md">
           <thead>
             <tr className="bg-[#000000]">
