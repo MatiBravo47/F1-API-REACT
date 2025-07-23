@@ -12,7 +12,7 @@ import TeamDetails from "./components/TeamDetails";
 function App() {
   return (
 
-    <Router>
+    <Router basename="/F1-Explorer-React-Vite-App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Schedule />} />
