@@ -118,7 +118,7 @@ function HorizontalCard({ race }) {
 
         <div className="md:w-1/3 bg-[#15151E] grid place-items-center">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/69/2022_F1_CourseLayout_Belgium.svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/2022_F1_CourseLayout_Hungary.svg/512px-2022_F1_CourseLayout_Hungary.svg.png?20220902054924"
             alt="mapa del circuito"
             className="rounded-xl object-contain h-full w-full max-h-[300px]"
           />

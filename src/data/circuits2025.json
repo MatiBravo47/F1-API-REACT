@@ -147,6 +147,7 @@
     "id": "hungaroring",
     "circuit": "Hungaroring",
     "location": "Budapest, Hungary",
+    "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/2022_F1_CourseLayout_Hungary.svg/512px-2022_F1_CourseLayout_Hungary.svg.png?20220902054924",
     "winners": [
       {"year": 2024, "driver": "Oscar Piastri", "team": "McLaren Mercedes"},
       {"year": 2023, "driver": "Max Verstappen", "team": "Red Bull Racing Honda RBPT"},
@@ -171,6 +172,7 @@
     "id": "zandvoort",
     "circuit": "Circuit Zandvoort",
     "location": "Zandvoort, Netherlands",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2022_F1_CourseLayout_Netherlands.svg/512px-2022_F1_CourseLayout_Netherlands.svg.png?20220902055308",
     "winners": [
       {"year": 2024, "driver": "Lando Norris", "team": "McLaren Mercedes"},
       {"year": 2023, "driver": "Max Verstappen", "team": "Red Bull Racing Honda RBPT"},
