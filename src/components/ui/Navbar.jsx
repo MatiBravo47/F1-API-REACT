@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import logo from '../assets/LogoF1.png';
+import logo from '../../assets/LogoF1.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +43,7 @@ function Navbar() {
           <NavLink to="/teams" className={linkClass}>
             Equipos
           </NavLink>
-          <NavLink to="/driversChampions" className={linkClass}>
+          <NavLink to="/driverChampions" className={linkClass}>
             Campeones
           </NavLink>
         </div>
@@ -68,7 +68,7 @@ function Navbar() {
           <NavLink to="/teams" onClick={closeMenu} className={mobileLinkClass}>
             Equipos
           </NavLink>
-          <NavLink to="/driversChampions" onClick={closeMenu} className={mobileLinkClass}>
+          <NavLink to="/driverChampions" onClick={closeMenu} className={mobileLinkClass}>
             Campeones
           </NavLink>
         </div>

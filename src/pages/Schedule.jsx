@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import PageWrapper from "../components/layout/PageWrapper";
-import HorizontalCard from "../components/HorizontalCard";
+import PageWrapper from "../components/ui/PageWrapper";
+import HorizontalCard from "../components/cards/HorizontalRaceCard";
 import { formatRaceDate } from "../utils/formatDateRange";
-import LapRecord from "../components/LapRecord";
-import CircuitChampions from "../components/CircuitChampions";
+import LapRecord from "../components/sections/LapRecordSection";
+import CircuitChampions from "../components/tables/CircuitChampions";
 
 
 function Schedule() {
@@ -37,12 +37,12 @@ function Schedule() {
         <HorizontalCard race={nextRace} />
         {/*<LapRecord race={nextRace} />*/}
         <CircuitChampions circuitId={nextRace}/>
-        <table className="w-full bg-[#15151E] rounded-lg shadow-md">
+        <table className="w-full rounded-lg shadow-md">
           <thead>
-            <tr className="bg-[#000000]">
-              <th className="text-red-400">#</th>
-              <th className="text-red-400">Gran Premio</th>
-              <th className="text-red-400">Fecha</th>
+            <tr className="bg-gray-800">
+              <th className="text-red-500">#</th>
+              <th className="text-red-500">Gran Premio</th>
+              <th className="text-red-500">Fecha</th>
             </tr>
           </thead>
           <tbody>
@@ -59,12 +59,10 @@ function Schedule() {
               }
               return (
                 <tr
-                  className="text-white"
+                  className={`"text-gray-300 font-bold" ${
+                    isNextRace ? "bg-red-700 h-[60px]" : "bg-gray-900 h-auto"
+                  }`}
                   key={circuito.round}
-                  style={{
-                    backgroundColor: isNextRace ? "#E10600" : "#15151E",
-                    height: isNextRace ? "60px" : "auto",
-                  }}
                 >
                   <td >{circuito.round}</td>
                   <td >{circuito.raceName}</td>

@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/ui/Navbar";
+import TeamDetails from "./components/TeamDetails";
+
 import Schedule from "./pages/Schedule";
 import Drivers from "./pages/Drivers";
 import Teams from "./pages/Teams";
-import DriversChampions from "./pages/driversChampions";
-import DriverDetails from "./components/DriverDetails";
-import TeamDetails from "./components/TeamDetails";
+import DriverChampions from "./pages/DriverChampions";
+import DriverDetails from "./pages/DriverDetails";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="/drivers/:driverId" element={<DriverDetails />} />
         <Route path="/teams/:teamId" element={<TeamDetails />} />
         <Route path="/teams" element={<Teams/>} />
-        <Route path="/driversChampions" element={<DriversChampions />} />
+        <Route path="/driverChampions" element={<DriverChampions />} />
       </Routes>
     </Router>
   );

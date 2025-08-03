@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
-//import { getAgeFromDate } from "../utils/utils"
+
 
 function DriverDetails() {
   const { driverId } = useParams();
-  //const navigate = useNavigate();
   const [driver, setDriver] = useState(null);
 
   useEffect(() => {

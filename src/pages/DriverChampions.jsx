@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getCountryCode } from "../utils/utils";
-import DriverCard from "../components/DriverCard";
+import DriverCard from "../components/cards/DriverCard";
 import { getDriverPhoto } from "../utils/picDrivers";
-import DriverCardSkeleton from "../components/DriverCardSkeleton";
+import LoadingSkeleton from "../components/ui/LoadingSkeleton";
 
-function DriversChampions() {
+function DriverChampions() {
   const [champions, setChampions] = useState([]); // Estado para almacenar los datos de los campeones
   const [loading, setLoading] = useState(true); // Estado para manejar el estado de carga
   const [error, setError] = useState(null); // Estado para manejar errores
@@ -66,7 +66,7 @@ function DriversChampions() {
     <div className="bg-black min-h-screen text-white p-4 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       {loading
         ? Array.from({ length: 32 }).map((_, i) => (
-            <DriverCardSkeleton key={i} />
+            <LoadingSkeleton key={i} />
           ))
         : champions.map((champion, index) => (
             <DriverCard key={index} driver={champion} />
@@ -75,4 +75,4 @@ function DriversChampions() {
   );
 }
 
-export default DriversChampions;
+export default DriverChampions;

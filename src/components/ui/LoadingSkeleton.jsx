@@ -1,4 +1,4 @@
-function DriverCardSkeleton() {
+function LoadingSkeleton() {
   return (
     <div className="bg-gray-800 rounded-lg p-4 shadow-md animate-pulse text-white flex flex-col items-center">
       {/* Imagen del piloto simulada */}
@@ -16,4 +16,4 @@ function DriverCardSkeleton() {
   );
 }
 
-export default DriverCardSkeleton;
+export default LoadingSkeleton;
