@@ -9,13 +9,13 @@ function DriverCard({ driver }) {
           <img
             src={`https://flagcdn.com/w40/${driver.countryCode.toLowerCase()}.png`}
             alt={driver.nationality}
-            className="inline-block w-8 h-6 mr-2"
+            className="inline-block w-8 h-6"
           />
       </div>
       <img
         src={photo}
         alt={driver.fullName}
-        className="driver-photo rounded-full w-[120px] h-[120px] mx-auto mb-2 object-cover"
+        className="rounded-full w-[120px] h-[120px] mx-auto object-cover"
       />
       <h2 className="text-gray-300 font-bold text-lg">{driver.fullName}</h2>
       <p className="text-gray-400">

@@ -59,9 +59,9 @@ function Schedule() {
                   }`}
                   key={circuit.round}
                 >
-                  <td >{circuit.round}</td>
-                  <td >{circuit.raceName}</td>
-                  <td className="font-bold">{formattedDate}</td>
+                  <td className="text-gray-300">{circuit.round}</td>
+                  <td className="text-gray-300">{circuit.raceName}</td>
+                  <td className="text-gray-300 font-bold">{formattedDate}</td>
                 </tr>
               );
             })}
