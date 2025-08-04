@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./../StandingTable.css";
 import { getCountryCode, getTeamShortName } from "./../../utils/utils";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +15,7 @@ function DriversStandingTable({ apiUrl }) {
   
   return (
     <div className="w-full md:p-6">
-      <table className="w-full">
+      <table className="w-full text-center">
         <thead>
           <tr className="border-b-4 border-gray-600 bg-gray-900 text-gray-500">
             <th>#</th>
@@ -35,15 +34,15 @@ function DriversStandingTable({ apiUrl }) {
               style={{
                 height: item.position === 1 ? "60px" : "auto"
             }}>
-              <td className="px-4 py-5">{item.position}</td>
-              <td className="px-4 py-5">
+              <td >{item.position}</td>
+              <td >
                 <img
                   src={`https://flagcdn.com/w40/${getCountryCode(item.driver.nationality)}.png`}
                   alt={item.driver.nationality}
                   className="inline-block w-6 h-4"
                 />
               </td>
-              <td className="px-4 py-5">
+              <td>
                 <div className="flex flex-col">
                   <span className="text-sm text-gray-500 font-normal">{item.driver.name}</span>
                   <span className="text-lg font-medium text-gray-300 ">{item.driver.surname}</span>

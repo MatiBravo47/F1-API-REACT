@@ -1,9 +1,7 @@
 import circuits from "../../data/circuits2025.json";
 
 function CircuitChampions({ circuitId }) {
-    console.log("este es el circuito ID",circuitId)
   const circuitoEncontrado = circuits.find((c) => c.id === circuitId?.circuit?.circuitId);
-
 
   if (!circuitoEncontrado) {
     return (

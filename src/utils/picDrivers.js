@@ -1,7 +1,7 @@
 export const getDriverPhoto = (driverName) => {
     const driverPhotoMap = {
         "Nino Farina": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/NinoFarina.jpg/640px-NinoFarina.jpg",
-        "Juan Fangio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Juan_Manuel_Fangio_%28circa_1952%29.jpg/640px-Juan_Manuel_Fangio_%28circa_1952%29.jpg",
+        "Juan Manuel Fangio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Juan_Manuel_Fangio_%28circa_1952%29.jpg/640px-Juan_Manuel_Fangio_%28circa_1952%29.jpg",
         "Alberto Ascari": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Grote_Prijs_Nederlandse_autoraces_Zandvoort._Winnaar_Askari_en_Z._K._M._de_Prins%2C_Bestanddeelnr_905-2688_%28cropped%29.jpg/640px-Grote_Prijs_Nederlandse_autoraces_Zandvoort._Winnaar_Askari_en_Z._K._M._de_Prins%2C_Bestanddeelnr_905-2688_%28cropped%29.jpg",
         "Mike Hawthorn": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mike_Hawthorn%2C_autocoureur_verongelukt%2C_Bestanddeelnr_910-1117.jpg/640px-Mike_Hawthorn%2C_autocoureur_verongelukt%2C_Bestanddeelnr_910-1117.jpg",
         "Jack Brabham": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Jack_Brabham_en_1969.jpg/640px-Jack_Brabham_en_1969.jpg",

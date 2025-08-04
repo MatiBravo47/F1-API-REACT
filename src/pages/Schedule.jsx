@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import PageWrapper from "../components/ui/PageWrapper";
 import HorizontalCard from "../components/cards/HorizontalRaceCard";
 import { formatRaceDate } from "../utils/formatDateRange";
-import LapRecord from "../components/sections/LapRecordSection";
 import CircuitChampions from "../components/tables/CircuitChampions";
 
 
 function Schedule() {
+  
   const [races, setRaces] = useState([]); // Estado para almacenar las carreras
   const [nextRace, setNextRace] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,28 +16,29 @@ function Schedule() {
       .then((response) => response.json())
       .then((data) => {
         setRaces(data.races); // Guardar las carreras en el estado
+      
+        const now = new Date();
 
-        // Buscar la próxima carrera
-        const today = new Date().toISOString().split("T")[0];
-        const upcoming = data.races.find(
-          (race) => race.schedule.race.date > today
-        );
+      // Buscar la primera carrera cuya fecha y hora aún no haya pasado
+      const upcoming = data.races.find((race) => {
+        const dateStr = race.schedule.race.date; // "2025-08-04"
+        const timeStr = race.schedule.race.time || "00:00:00Z"; // por si falta el tiempo
+        const raceDateTime = new Date(`${dateStr}T${timeStr}`);
+        return raceDateTime > now;
+      });
         setNextRace(upcoming);
         setIsLoading(false);
       })
       .catch((error) => console.error("Error fetching races:", error));
       setIsLoading(false);
   }, []);
-
-  let nextRaceFound = false; // Bandera para identificar el primer `true`
-  console.log("Proxima carrera",nextRace)
+  
   return (
     <>
       <PageWrapper isLoading={isLoading}>
         <HorizontalCard race={nextRace} />
-        {/*<LapRecord race={nextRace} />*/}
         <CircuitChampions circuitId={nextRace}/>
-        <table className="w-full rounded-lg shadow-md">
+        <table className="w-full rounded-lg shadow-md text-center">
           <thead>
             <tr className="bg-gray-800">
               <th className="text-gray-300">#</th>
@@ -46,26 +47,20 @@ function Schedule() {
             </tr>
           </thead>
           <tbody>
-            {races.map((circuito) => {
-              const raceDate = circuito.schedule.race.date;
-              const now = new Date().toISOString().split("T")[0];
-
-              const isNextRace = !nextRaceFound && now < raceDate;
+            {races.map((circuit) => {
+              const isNextRace = nextRace && circuit.round === nextRace.round;
               
-              const formattedDate = formatRaceDate(circuito.schedule.fp1.date, circuito.schedule.race.date);
+              const formattedDate = formatRaceDate(circuit.schedule.fp1.date, circuit.schedule.race.date);
               
-              if (isNextRace) {
-                nextRaceFound = true; // Marcar que hemos encontrado la próxima carrera
-              }
               return (
                 <tr
-                  className={`"text-gray-300 font-bold" ${
-                    isNextRace ? "bg-red-700 h-[60px]" : "bg-gray-900 h-auto"
+                  className={`"text-gray-300 font-bold " ${
+                    isNextRace ? "bg-red-700 h-[60px]" : "bg-gray-900 h-[60px]"
                   }`}
-                  key={circuito.round}
+                  key={circuit.round}
                 >
-                  <td >{circuito.round}</td>
-                  <td >{circuito.raceName}</td>
+                  <td >{circuit.round}</td>
+                  <td >{circuit.raceName}</td>
                   <td className="font-bold">{formattedDate}</td>
                 </tr>
               );

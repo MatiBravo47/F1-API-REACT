@@ -13,7 +13,6 @@ function DetailsDriverCard({ teamId }) {
       .catch((err) => console.error("Error al obtener pilotos:", err));
   }, [teamId]);
 
-  console.log("drivers", drivers);
   if (drivers[0]) console.log("drivers[0]", drivers[0].driver.driverId);
   const teamColor = getTeamColor(teamId);
   return (

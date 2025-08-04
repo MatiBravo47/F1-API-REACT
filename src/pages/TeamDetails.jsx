@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getTeamColor } from "../utils/utils";
-import DetailsDriverCard from "./DetailsDriverCard";
+import DetailsDriverCard from "../components/DetailsDriverCard";
 
 function TeamDetails() {
   const { teamId } = useParams();
-  const navigate = useNavigate();
   const [team, setTeam] = useState(null);
 
   useEffect(() => {
@@ -22,13 +21,6 @@ function TeamDetails() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="max-w-4xl mx-auto px-6 py-8">
-        {/* Botón volver */}
-        <button
-          onClick={() => navigate(-1)}
-          className="mb-8 text-gray-400 hover:text-white transition-colors"
-        >
-          ← Volver
-        </button>
 
         {/* Título principal */}
         <div className="mb-16">

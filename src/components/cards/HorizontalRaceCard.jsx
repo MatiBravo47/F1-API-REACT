@@ -34,8 +34,8 @@ function HorizontalCard({ race }) {
   };
 
   const getCircuitImageByRace = (race) => {
-  const circuit = circuits.find(c => c.id === race.circuit.circuitId);
-  return circuit?.image || null; // Devuelve null si no tiene imagen
+    const circuit = circuits.find(c => c.id === race.circuit.circuitId);
+    return circuit?.image || null;
 };
 
   const image = getCircuitImageByRace(race);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-
 function DriverDetails() {
   const { driverId } = useParams();
   const [driver, setDriver] = useState(null);
@@ -12,13 +11,11 @@ function DriverDetails() {
       .then((data) => setDriver(data))
       .catch((err) => console.error(err));
   }, [driverId]);
-  console.log("data", driver);
+
   if (!driver) return <p>Cargando detalles del piloto...</p>;
   
   return (
     <div>
-      {/*<button onClick={() => navigate(-1)}>Volver</button>/*}
-      {/* Más info */}
       <div class="bg-gray-900 py-8 sm:py-18">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl lg:max-w-none">
