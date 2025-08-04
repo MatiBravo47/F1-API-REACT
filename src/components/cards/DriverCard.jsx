@@ -2,7 +2,7 @@ import "./DriverCard.css";
 
 function DriverCard({ driver }) {
   return (
-    <div className=" driver-card">
+    <div className=" driver-card bg-gray-900">
       <div className="flex justify-between items-center">
         <h1 className="text-red-700 text-3xl font-bold">{driver.año}</h1>
           <img

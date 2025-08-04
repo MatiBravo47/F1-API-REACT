@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./../StandingTable.css";
-import { getCountryCode, getTeamColor, getTeamShortName } from "./../../utils/utils";
+import { getCountryCode, getTeamShortName } from "./../../utils/utils";
 import { useNavigate } from "react-router-dom";
 
 function DriversStandingTable({ apiUrl }) {
@@ -15,10 +15,10 @@ function DriversStandingTable({ apiUrl }) {
   }, [apiUrl]);
   
   return (
-    <div className="w-full bg-[#15151E] md:p-6">
+    <div className="w-full md:p-6">
       <table className="w-full">
         <thead>
-          <tr className="border-b-4 border-gray-600 bg-[#15151E] text-gray-500">
+          <tr className="border-b-4 border-gray-600 bg-gray-900 text-gray-500">
             <th>#</th>
             <th></th>
             <th>Piloto</th>
@@ -29,7 +29,7 @@ function DriversStandingTable({ apiUrl }) {
         <tbody>
           {data.map((item, index) => (
             <tr 
-              className="bg-[#15151E] border border-gray-800 cursor-pointer transition-colors duration-200 hover:bg-gray-800 hover:text-white hover:scale-[1.01]"
+              className="bg-gray-900 border border-gray-800 cursor-pointer transition-colors duration-200 hover:bg-gray-800 hover:text-white hover:scale-[1.01]"
               key={index} 
               onClick={() => navigate(`/drivers/${item.driverId}`)}
               style={{

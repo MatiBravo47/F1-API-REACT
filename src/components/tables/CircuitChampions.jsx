@@ -12,10 +12,10 @@ function CircuitChampions({ circuitId }) {
     );
   }
   return (
-    <div className="px-4 py-3 ">
-      <div className="flex overflow-hidden rounded-xl border border-[#4d4d4d] bg-gray-900">
+    <div className="px-4 py-3">
+      <div className="flex overflow-hidden rounded-xl bg-gray-900">
         <table className="flex-1">
-          <thead className="border-b-2 border-gray-600">
+          <thead className="bg-gray-800">
             <tr >
               <th className="px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">
                 Año

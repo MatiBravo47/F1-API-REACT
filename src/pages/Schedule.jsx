@@ -40,9 +40,9 @@ function Schedule() {
         <table className="w-full rounded-lg shadow-md">
           <thead>
             <tr className="bg-gray-800">
-              <th className="text-red-500">#</th>
-              <th className="text-red-500">Gran Premio</th>
-              <th className="text-red-500">Fecha</th>
+              <th className="text-gray-300">#</th>
+              <th className="text-gray-300">Gran Premio</th>
+              <th className="text-gray-300">Fecha</th>
             </tr>
           </thead>
           <tbody>
