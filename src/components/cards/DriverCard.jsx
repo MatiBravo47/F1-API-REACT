@@ -22,6 +22,9 @@ function DriverCard({ driver }) {
         {driver.nationality}
 
       </p>
+      <p className="text-gray-400 font-bold">
+        {driver.teamName}
+      </p>
     </div>
   );
 }
