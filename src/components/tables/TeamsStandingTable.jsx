@@ -30,11 +30,11 @@ function TeamsStandingTable({ apiUrl }) {
               onClick={() => navigate(`/teams/${item.teamId}`)}
               className="bg-gray-900 cursor-pointer h-[60px] border border-gray-800 text-gray-300 transition-colors duration-200 hover:bg-gray-800 hover:text-white hover:scale-[1.01]"
             >
-              <td className="font-bold">{item.position}</td>
-              <td className="font-bold">
+              <td className="font-semibold">{item.position}</td>
+              <td className="font-semibold">
                 {getTeamShortName(item.team.teamName)}
               </td>
-              <td className="font-bold">{item.points}</td>
+              <td className="font-semibold">{item.points}</td>
             </tr>
           ))}
         </tbody>

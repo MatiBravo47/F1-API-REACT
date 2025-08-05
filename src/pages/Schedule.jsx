@@ -55,7 +55,7 @@ function Schedule() {
               return (
                 <tr
                   className={`${
-                    isNextRace ? "bg-red-700 " : "bg-gray-900"
+                    isNextRace ? "bg-red-700" : "bg-gray-900"
                   }`}
                   key={circuit.round}
                 >

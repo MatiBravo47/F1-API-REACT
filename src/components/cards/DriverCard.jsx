@@ -17,12 +17,12 @@ function DriverCard({ driver }) {
         alt={driver.fullName}
         className="rounded-full w-[120px] h-[120px] mx-auto object-cover"
       />
-      <h2 className="text-gray-300 font-bold text-lg">{driver.fullName}</h2>
+      <h2 className="text-gray-300 font-semibold text-lg">{driver.fullName}</h2>
       <p className="text-gray-400">
         {driver.nationality}
 
       </p>
-      <p className="text-gray-400 font-bold">
+      <p className="text-gray-400 font-semibold">
         {driver.teamName}
       </p>
     </div>
