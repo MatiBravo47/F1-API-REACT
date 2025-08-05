@@ -43,23 +43,23 @@ function HorizontalCard({ race }) {
     <div className="w-full bg-gray-900">
       <div className="relative flex flex-col md:flex-row md:space-x-5 rounded-xl shadow-lg p-4 max-h-[800px] overflow-hidden w-full space-y-5 md:space-y-0">
         <div className="w-full md:w-2/3 bg-gray-900 flex flex-col justify-start">
-          <div className="w-fit inline-block bg-gray-900 px-3 py-1 rounded-full text-xs text-gray-400 font-medium tracking-wide uppercase">
+          <div className="w-fit inline-block bg-gray-900 px-4 py-1 rounded-full text-xs text-gray-400 font-medium tracking-wide uppercase">
             Próxima carrera
           </div>
 
           <div className="flex bg-gray-900 items-baseline gap-4 ">
-            <span className="text-gray-300 text-base">Round {race.round}</span>
-            <h3 className="bg-gray-900 font-black text-lg text-red-500 text-3xl p-4">
+            <span className="text-gray-300 text-base px-4">Round {race.round}</span>
+            <h3 className="bg-gray-900 font-semibold text-lg text-red-500 text-3xl p-4">
               {race.circuit.country}
             </h3>
           </div>
 
-          <p className="bg-gray-900 text-lg text-white">{race.raceName}</p>
+          <p className="bg-gray-900 text-lg text-gray-300 px-4">{race.raceName}</p>
 
-          <div className="rounded-lg mt-3 text-white text-sm space-y-1">
+          <div className="rounded-lg mt-3 text-sm space-y-1">
             <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
-              <span className="text-gray-300 font-bold">Practica 1</span>
-              <span className="font-bold">
+              <span className="text-gray-300 font-semibold">Practica 1</span>
+              <span className="font-semibold text-gray-300">
                 {formatTime(race.schedule.fp1.date, race.schedule.fp1.time)} -{" "}
                 {formatDate(race.schedule.fp1.date, race.schedule.fp1.time)}
               </span>
@@ -67,8 +67,8 @@ function HorizontalCard({ race }) {
 
             {race.schedule.fp2.date ? (
               <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
-                <span className="text-gray-300 font-bold">Practica 2</span>
-                <span className="font-bold">
+                <span className="text-gray-300 font-semibold">Practica 2</span>
+                <span className="font-semibold text-gray-300">
                   {formatTime(race.schedule.fp2.date, race.schedule.fp2.time)} -{" "}
                   {formatDate(race.schedule.fp2.date, race.schedule.fp2.time)}
                 </span>
@@ -77,8 +77,8 @@ function HorizontalCard({ race }) {
 
             {race.schedule.fp3.date ? (
               <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
-                <span className="text-gray-300 font-bold">Practica 3</span>
-                <span className="font-bold">
+                <span className="text-gray-300 font-semibold">Practica 3</span>
+                <span className="font-semibold text-gray-300">
                   {formatTime(race.schedule.fp3.date, race.schedule.fp3.time)} -{" "}
                   {formatDate(race.schedule.fp3.date, race.schedule.fp3.time)}
                 </span>
@@ -87,8 +87,8 @@ function HorizontalCard({ race }) {
 
             {race.schedule.sprintQualy.date ? (
               <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
-                <span className="text-gray-300 font-bold">Sprint Qualifying</span>
-                <span className="font-bold">
+                <span className="text-gray-300 font-semibold">Sprint Qualifying</span>
+                <span className="font-semibold text-gray-300">
                   {formatTime(race.schedule.sprintQualy.date, race.schedule.sprintQualy.time)} -{" "}
                   {formatDate(race.schedule.sprintQualy.date, race.schedule.sprintQualy.time)}
                 </span>
@@ -97,8 +97,8 @@ function HorizontalCard({ race }) {
 
             {race.schedule.sprintRace.date ? (
               <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
-                <span className="text-red-500 font-bold">Sprint Race</span>
-                <span className="text-red-500 font-bold">
+                <span className="text-red-500 font-semibold">Sprint Race</span>
+                <span className="text-red-500 font-semibold">
                   {formatTime(race.schedule.sprintRace.date, race.schedule.sprintRace.time)} -{" "}
                   {formatDate(race.schedule.sprintRace.date, race.schedule.sprintRace.time)}
                 </span>
@@ -106,8 +106,8 @@ function HorizontalCard({ race }) {
             ) : null}
 
             <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
-              <span className="text-gray-300 font-bold">Clasificación</span>
-              <span className="font-bold">
+              <span className="text-gray-300 font-semibold">Clasificación</span>
+              <span className="font-semibold text-gray-300">
                 {formatTime(race.schedule.qualy.date, race.schedule.qualy.time)} -{" "}
                 {formatDate(race.schedule.qualy.date, race.schedule.qualy.time)}
               </span>
@@ -115,7 +115,7 @@ function HorizontalCard({ race }) {
 
             <div className="bg-gray-900 flex justify-between border-b border-gray-700 p-4">
               <span className="text-red-500 font-semibold">Gran Premio</span>
-              <span className="font-bold text-red-500">
+              <span className="font-semibold text-red-500">
                 {formatTime(race.schedule.race.date, race.schedule.race.time)} -{" "}
                 {formatDate(race.schedule.race.date, race.schedule.race.time)}
               </span>

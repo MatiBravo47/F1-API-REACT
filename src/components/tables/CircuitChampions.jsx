@@ -11,16 +11,16 @@ function CircuitChampions({ circuitId }) {
   }
   return (
       <div className="flex overflow-hidden rounded-xl bg-gray-900">
-        <table className="flex-1">
-          <thead className="bg-gray-800 text-gray-400 font-bold">
+        <table className="w-full">
+          <thead className="bg-gray-800 text-gray-400">
             <tr >
-              <th className="px-4 py-3 text-center w-[400px] font-bold text-sm leading-normal">
+              <th className="px-4 py-3 text-center text-sm font-bold">
                 Año
               </th>
-              <th className="px-4 py-3 text-center w-[400px] text-sm font-bold leading-normal">
+              <th className="px-4 py-3 text-center text-sm font-bold ">
                 Ganador
               </th>
-                <th className="px-4 py-3 text-center w-[400px] text-sm font-bold leading-normal">
+                <th className="px-4 py-3 text-center text-sm font-bold">
                 Equipo
               </th>
             </tr>
@@ -28,13 +28,13 @@ function CircuitChampions({ circuitId }) {
           <tbody>
             {circuitoEncontrado.winners?.map((winner, index) => (
               <tr key={index} className="space-y-2 border-b-1 border-gray-800">
-                <td className="h-[72px] px-4 py-2 w-[400px] text-center text-gray-300 text-sm font-normal leading-normal">
+                <td className="px-4 py-4 text-center text-gray-300 text-sm">
                   {winner.year}
                 </td>
-                <td className="h-[72px] px-4 py-2 w-[400px] text-center text-gray-300 text-sm font-normal leading-normal">
+                <td className="px-4 py-4 text-center text-gray-300 text-sm">
                   {winner.driver}
                 </td>
-                <td className="h-[72px] px-4 py-2 w-[400px] text-center text-gray-300 text-sm font-normal leading-normal">
+                <td className="px-4 py-4 text-center text-gray-300 text-sm">
                   {winner.team}
                 </td>
               </tr>

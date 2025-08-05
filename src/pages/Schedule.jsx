@@ -54,14 +54,14 @@ function Schedule() {
               
               return (
                 <tr
-                  className={`"text-gray-300 font-bold " ${
-                    isNextRace ? "bg-red-700 h-[60px]" : "bg-gray-900 h-[60px]"
+                  className={`${
+                    isNextRace ? "bg-red-700 " : "bg-gray-900"
                   }`}
                   key={circuit.round}
                 >
-                  <td className="text-gray-300">{circuit.round}</td>
-                  <td className="text-gray-300">{circuit.raceName}</td>
-                  <td className="text-gray-300 font-bold">{formattedDate}</td>
+                  <td className="py-3 text-gray-300">{circuit.round}</td>
+                  <td className="text-gray-300 py-3">{circuit.raceName}</td>
+                  <td className="py-3 text-gray-300">{formattedDate}</td>
                 </tr>
               );
             })}
