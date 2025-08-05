@@ -41,9 +41,9 @@ function Schedule() {
         <table className="w-full rounded-lg shadow-md text-center">
           <thead>
             <tr className="bg-gray-800">
-              <th className="text-gray-300">#</th>
-              <th className="text-gray-300">Gran Premio</th>
-              <th className="text-gray-300">Fecha</th>
+              <th className="text-gray-300 py-2">#</th>
+              <th className="text-gray-300 py-2">Gran Premio</th>
+              <th className="text-gray-300 py-2">Fecha</th>
             </tr>
           </thead>
           <tbody>

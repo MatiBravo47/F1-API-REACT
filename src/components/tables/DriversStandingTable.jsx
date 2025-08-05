@@ -18,11 +18,11 @@ function DriversStandingTable({ apiUrl }) {
       <table className="w-full text-center">
         <thead>
           <tr className="border-b-4 border-gray-600 bg-gray-900 text-gray-500">
-            <th>#</th>
-            <th></th>
-            <th>Piloto</th>
-            <th>Equipo</th>
-            <th>Puntos</th>
+            <th className="py-3">#</th>
+            <th className="py-3"></th>
+            <th className="py-3">Piloto</th>
+            <th className="py-3">Equipo</th>
+            <th className="py-3">Puntos</th>
           </tr>
         </thead>
         <tbody>

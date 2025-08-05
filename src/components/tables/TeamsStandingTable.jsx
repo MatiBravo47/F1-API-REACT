@@ -18,9 +18,9 @@ function TeamsStandingTable({ apiUrl }) {
       <table className="w-full text-center">
         <thead>
           <tr className="bg-gray-900 text-gray-500 border-b-4 border-gray-600">
-            <th>#</th>
-            <th>Equipo</th>
-            <th>Puntos</th>
+            <th className="py-3">#</th>
+            <th className="py-3">Equipo</th>
+            <th className="py-3">Puntos</th>
           </tr>
         </thead>
         <tbody>
